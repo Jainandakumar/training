@@ -1,0 +1,31 @@
+
+<h3> Update User details </h3>
+
+
+  <%= form_for @user do |f|%>
+<table class = "container">
+    <tr>
+      <td><%=f.label :First_Name %></td>
+      <td><%=f.text_field :f_name%></td>
+    </tr>
+    <tr>
+      <td><%=f.label :Last_Name %></td>
+      <td><%=f.text_field :l_name%></td>
+    </tr>
+    <tr>
+      <td><%=f.label :Email %></td>
+      <td><%=f.text_field :email%></td>
+    </tr>
+    <tr>
+      <td><%=f.label :Address %></td>
+      <td><%=f.text_field :address%></td>
+    </tr>
+    <tr>
+      <td><%=f.label :Phone_Number %></td>
+      <td><%=f.text_field :phone%></td>
+    </tr>
+    <tr>
+      <td><%=f.submit "Update"%></td>
+    </tr>
+</table>
+  <%end%>

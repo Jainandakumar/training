@@ -1,0 +1,27 @@
+<%= link_to 'Back to Authors', authors_path %>
+<h3> Edit Author</h3>
+</br>
+
+<table class = "container">
+  <%= form_for @author do |f|%>
+    <tr>
+      <td><%= f.label :Name %></td>
+      <td><%= f.text_field :name %></td>
+    </tr>
+    <tr>
+      <td><%= f.label :Title %></td>
+      <td><%= f.text_field :title %></td>
+    </tr>
+    <tr>
+      <td><%= f.label :Email %></td>
+      <td><%= f.text_field :email %></td>
+    </tr>
+    <tr>
+      <td><%= f.label :Description %></td>
+      <td><%= f.text_field :description %></td>
+    </tr>
+    <tr>
+      <td><%= f.submit "Update" %></td>
+    </tr>
+  <%end%>
+</table>

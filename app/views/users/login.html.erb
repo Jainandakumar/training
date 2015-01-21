@@ -1,0 +1,23 @@
+<h4>Sign In to Proceed</h4>
+
+<%= form_for([@user], url: {:controller => "users", :action => "allow_login"}, method: 'get') do |f| %>
+	<table class = "container">
+		<tr>
+			<td><%= f.label :email %></td>
+			<td><%= f.text_field :email %></td>
+		</tr>
+		<tr>
+			<td><%= f.label :password %></td>
+			<td><%= f.password_field :password %></td>
+		</tr>
+		<tr>
+			<td><%= f.submit "Sign In" %></td>
+		</tr>
+	</table>
+<%end%>
+
+<!--%= form_tag({:controller => "users", :action => "allow_login"}, method: 'get') do%-->
+
+<!--%= label_tag :email%-->
+<!--%= text_field_tag :email%-->
+	<!--%end%-->

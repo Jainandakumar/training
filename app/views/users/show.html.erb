@@ -1,0 +1,25 @@
+
+<%= link_to "Add new User", new_user_path %>
+
+<h3> List of Users </h3>
+
+	<table class = "container">
+		<tr class = "header">
+			<th>First Name</th></t>
+			<th>Last Name</th>
+			<th>Email</th>
+			<th>Phone</th>
+			<th>Address</th>
+		</tr>
+		<% @user.each do |f| %> 
+		<tr class="center">
+			<td><%= f.f_name%></td>
+			<td><%=f.l_name%></td>
+			<td><%=f.email%></td>
+			<td><%=f.phone%></td>
+			<td><%=f.address%></td>
+			<td><%= link_to "Edit" , edit_user_path(f) %>
+			<td><%= link_to "Delete",f,method: "delete", confirm: "Are you sure you want to delete #{f.f_name}?" %></td></br>
+		</tr>
+	</table>
+<%end%>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Training</title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>  
+</head>
+<body>
+	
+	<div class = "container", align = "right">
+		
+	<%if params !={"controller"=>"authors", "action"=>"index"}%>
+<%= link_to 'Home Page',{controller: "authors" , action: "index"} %>
+<%end%>
+		<% if !session[:user_id]%>
+			<%= link_to "Sign in" , users_login_path %>
+			<%= "|" %>
+			<%= link_to "Sign up" , new_user_path %>
+		<%else%>
+			<%= link_to "Log Out" , controller: "users", action: "logout" %>
+		<%end%>
+	</div>
+
+<%= yield %>
+<% flash.each do |key, value|%>
+<%= value%>
+<%end%>
+
+
+
+</body>
+</html>

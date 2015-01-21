@@ -1,0 +1,27 @@
+
+<%= link_to 'Add new Author', new_author_path %>
+<h3> List of Authors </h3>
+<%= display_time%>
+<%= p%>
+<table class = "container">
+	<tr class = "header">
+		<th>Name</th>
+		<th>Email</th>
+		<th>Title</th>
+		<th>Description</th>
+		<th>Cover</th>
+	</tr>
+	<% @author.each do |f| %>
+		<tr class="center">
+			<td><%= f.name%></td>
+			<td><%=f.email%></td>
+			<td><%=f.title%></td>
+			<td><%=f.description%></td>
+			<%if !f.image_id.blank?%>
+			<td><%= link_to (image_tag (Image.find f.image_id).photo.url(:thumb)),edit_author_path(f)%></td>
+			<%end%>
+			<td><%= link_to "Edit", edit_author_path(f) %></td> 
+			<td><%= link_to "Delete", f, method: "delete" , confirm: "Are you sure you want to delete #{f.name}?" %></td>
+		</tr>
+	<%end%>
+</table>

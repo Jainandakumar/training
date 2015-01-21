@@ -1,0 +1,51 @@
+<%= link_to "Back to Users", users_show_path %> 
+
+<h2> Register here </h2>
+
+
+  <%= form_for @user do |f|%>
+  <table class = "container">
+    <tr>
+      <td><%= f.label :First_Name %></td>
+      <td><%= f.text_field :f_name %></td>
+    </tr>
+    <tr>
+      <td><%= f.label :Last_Name %></td>
+      <td><%= f.text_field :l_name %></td>
+    </tr>  
+    <tr>
+      <td><%= f.label :Address %></td>
+      <td><%= f.text_field :address %></td>
+    </tr>
+    <tr>
+      <td><%= f.label :Phone_Number %></td>
+      <td><%= f.text_field :phone %></td>
+    </tr>
+     <tr>
+      <td><%= f.label :Email %></td>
+      <td><%= f.text_field :email %></td>
+    </tr>
+    <tr>
+      <td><%= f.label :Password %></td>
+      <td><%= f.password_field :password %></td>
+    </tr>
+    <tr>
+      <td><%= f.label :Active %></td>
+      <td><%= f.check_box :active %></td>
+    </tr>
+    <tr>
+      <td><%= f.submit "Sign Up" %></td>
+    </tr>
+  </table>
+  <%end%>
+
+
+
+<% if @user.errors.any? %>
+    <h4><%= pluralize(@user.errors.count, "error") %> prohibited this article from being saved:</h4>
+
+    <% @user.errors.full_messages.each do |msg| %>
+      <%= msg %></br>
+    <% end %>
+<% end %>
+

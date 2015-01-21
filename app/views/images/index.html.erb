@@ -1,0 +1,15 @@
+<%= link_to 'Home Page', users_path %>
+<%= "|" %>
+<%= link_to 'Add New Image', new_image_path %>
+</br></br>
+<h3> List of Images </h3>
+</br>
+<table class = "container">
+	<% @image.each do |f|%>
+		<tr>
+			<td><%= image_tag f.photo.url(:medium) %></td>
+			<!-- <td><%= link_to "Edit", edit_image_path(f) %></td> -->
+			<td><%= link_to "Delete",f, method: "delete", confirm: "Are you sure you want to delete #{@image}?" %></td>
+		</tr>
+	<%end%>
+</table>
